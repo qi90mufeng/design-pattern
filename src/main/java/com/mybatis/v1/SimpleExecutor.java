@@ -1,12 +1,14 @@
 package com.mybatis.v1;
 
+import com.mybatis.entity.BusinessLog;
+
 import java.sql.*;
 
 /**
  * @author fujin
  * @version $Id: SimpleExecutor.java, v 0.1 2018-04-03 13:56 Exp $$
  */
-public class SimpleExecutor implements MqExecutor {
+public class SimpleExecutor implements MyExecutor {
 
     public <E> E query(String sql, Object parameter){
         try {
@@ -18,6 +20,8 @@ public class SimpleExecutor implements MqExecutor {
             while (rs.next()) {
                 bl.setId(rs.getInt(1));
                 bl.setUserId(rs.getLong(2));
+                bl.setMethodCode(rs.getString(3));
+                bl.setMethodName(rs.getString(4));
             }
             return (E) bl;
         } catch (SQLException e) {
@@ -31,10 +35,10 @@ public class SimpleExecutor implements MqExecutor {
         String driver = "com.mysql.cj.jdbc.Driver";
         String url = "jdbc:mysql://localhost:3306/sina?useUnicode=true&characterEncoding=utf-8&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
         String username = "root";
-        String password = "123456";
+        String password = "zEDG?fqul6oO";
         Connection conn = null;
         try {
-            Class.forName(driver); //classLoader,加载对应驱动
+            Class.forName(driver); //加载驱动
             conn = DriverManager.getConnection(url, username, password);
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();

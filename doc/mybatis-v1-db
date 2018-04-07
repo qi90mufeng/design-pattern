@@ -1,0 +1,22 @@
+use sina;
+
+CREATE TABLE `a_business_log` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键ID，自增序列',
+  `user_id` bigint(20) DEFAULT NULL COMMENT '用户ID',
+  `method_code` varchar(6) DEFAULT NULL COMMENT '接口代码:6位',
+  `method_name` varchar(255) DEFAULT NULL COMMENT '接口名称',
+  `in_param` varchar(255) DEFAULT NULL COMMENT '入参',
+  `out_param` mediumtext COMMENT '出参',
+  `status` int(2) DEFAULT NULL COMMENT '状态',
+  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+  `create_ymd` varchar(8) DEFAULT NULL COMMENT '创建日期',
+  `remark` varchar(512) DEFAULT NULL COMMENT '备注',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+INSERT INTO `sina`.`a_business_log` (`id`, `user_id`, `method_code`, `method_name`, `in_param`, `out_param`, `status`, `create_time`, `update_time`, `create_ymd`, `remark`) VALUES (null, '80', '050202', '部署流程', '{\"deployName\":\"微农贷\"}', 'orderApply:1:7504', '100', '2017-10-31 18:19:44', NULL, '20171031', NULL);
+INSERT INTO `sina`.`a_business_log` (`id`, `user_id`, `method_code`, `method_name`, `in_param`, `out_param`, `status`, `create_time`, `update_time`, `create_ymd`, `remark`) VALUES (null, '200', '050310', '指派任务', '{\"userId\":200,\"taskId\":\"7515\"}', 'success', '100', '2017-10-31 18:20:39', NULL, '20171031', NULL);
+INSERT INTO `sina`.`a_business_log` (`id`, `user_id`, `method_code`, `method_name`, `in_param`, `out_param`, `status`, `create_time`, `update_time`, `create_ymd`, `remark`) VALUES (null, '192', '050203', '启动流程', '{\"processDefinitionId\":\"orderApply:1:7504\",\"assignUserId\":200,\"paramJson\":\"{\\\"assignCompany\\\":\\\"0002\\\",\\\"orderNo\\\":\\\"20172010210\\\",\\\"memberName\\\":\\\"李三\\\",\\\"memberPhone\\\":\\\"13467121212\\\",\\\"loanAmount\\\":30000,\\\"adddress\\\":\\\"衢州市和平村和平县888号\\\"}\",\"userId\":192}', '7505', '100', '2017-10-31 18:20:39', NULL, '20171031', NULL);
+
+

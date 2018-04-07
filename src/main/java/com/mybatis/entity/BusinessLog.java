@@ -1,4 +1,4 @@
-package com.mybatis.v1;
+package com.mybatis.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
