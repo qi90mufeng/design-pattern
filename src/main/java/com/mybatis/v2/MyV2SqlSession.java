@@ -14,8 +14,8 @@ public class MyV2SqlSession {
     private MyV2Configuration myV2Configuration;
 
     public MyV2SqlSession(MyExecutor myExecutor, MyV2Configuration myV2Configuration) {
-        this.myExecutor = myExecutor;
         this.myV2Configuration = myV2Configuration;
+        this.myExecutor = myV2Configuration.newExecutor(myExecutor);
     }
 
     /**
@@ -37,5 +37,9 @@ public class MyV2SqlSession {
      */
     public <T> T selectOne(String sql, Object parameter){
         return myExecutor.query(sql, parameter);
+    }
+
+    public int insert(String sql){
+        return myExecutor.insert(sql);
     }
 }

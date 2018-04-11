@@ -7,7 +7,7 @@
 */.classpath
 */.project
 */.settings/*
-*/target/*
+target/*
 */.idea/*
 .idea/*
 */log/*

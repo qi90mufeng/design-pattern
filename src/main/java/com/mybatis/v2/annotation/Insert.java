@@ -1,4 +1,4 @@
-package com.mybatis.v2;
+package com.mybatis.v2.annotation;
 
 
 import java.lang.annotation.*;
@@ -6,7 +6,7 @@ import java.lang.annotation.*;
 @Documented
 @Retention(value= RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
-public @interface Select {
+public @interface Insert {
 
     String value();
 }

@@ -7,4 +7,6 @@ package com.mybatis.v1;
 public interface MyExecutor {
 
     <E> E query(String sql, Object parameter);
+
+    int insert(String sql);
 }

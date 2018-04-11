@@ -1,9 +1,8 @@
 package com.mybatis.v2;
 
 import com.mybatis.mapper.BusinessLogMapper;
-import com.mybatis.v1.MyConfiguration;
-import com.mybatis.v1.MySqlSession;
-import com.mybatis.v1.SimpleExecutor;
+import com.mybatis.v2.plugin.InsertPlugin;
+import com.mybatis.v2.plugin.SelectPlugin;
 
 /**
  * @author fujin
@@ -19,8 +18,24 @@ public class MybatisV2Test {
      * @param args
      */
     public static void main(String[] args) {
-        MyV2SqlSession  myV2SqlSession = new MyV2SqlSession(new SimpleExecutor(), new MyV2Configuration());
+        //select();
+        insert();
+    }
+
+    private static void select(){
+        MyV2SqlSession  myV2SqlSession = new MyV2SqlSession(new SimpleV2Executor(), new MyV2Configuration(new SelectPlugin()));
         BusinessLogMapper userMapper = myV2SqlSession.getMapper(BusinessLogMapper.class);
-        System.out.println(userMapper.selectById(5));
+        System.out.println(userMapper.selectById(2));
+    }
+
+    private static void insert(){
+        MyV2SqlSession  myV2SqlSession = new MyV2SqlSession(new SimpleV2Executor(), new MyV2Configuration(new InsertPlugin()));
+        BusinessLogMapper userMapper = myV2SqlSession.getMapper(BusinessLogMapper.class);
+        int rs =  userMapper.insertRecord();
+        if (rs > 0){
+            System.out.println("------insert success-------");
+        }else{
+            System.out.println("------insert failure-------");
+        }
     }
 }

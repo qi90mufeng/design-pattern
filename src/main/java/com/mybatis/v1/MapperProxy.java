@@ -1,8 +1,5 @@
 package com.mybatis.v1;
 
-import com.mybatis.v2.Select;
-
-import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
