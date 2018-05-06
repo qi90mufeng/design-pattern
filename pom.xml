@@ -27,6 +27,12 @@
             <artifactId>mybatis</artifactId>
             <version>3.4.2</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>19.0</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -126,5 +132,8 @@
         </plugins>
     </build>
 
+    <!--<distributionManagement>-->
+       <!--配置发布的私服地址  release或者snapshot-->
+    <!--</distributionManagement>-->
 
 </project>
