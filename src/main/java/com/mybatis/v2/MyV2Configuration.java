@@ -1,7 +1,6 @@
 package com.mybatis.v2;
 
-import com.mybatis.v1.MyExecutor;
-import org.apache.ibatis.executor.Executor;
+import com.mybatis.v2.session.MyV2SqlSession;
 import org.apache.ibatis.plugin.Interceptor;
 
 import java.lang.reflect.Proxy;
@@ -24,8 +23,8 @@ public class MyV2Configuration {
         this.interceptor = interceptor;
     }
 
-    public MyExecutor newExecutor(MyExecutor executor){
-        executor = (MyExecutor) interceptor.plugin(executor);
+    public MyV2Executor newExecutor(MyV2Executor executor){
+        executor = (MyV2Executor) interceptor.plugin(executor);
         return executor;
     }
 

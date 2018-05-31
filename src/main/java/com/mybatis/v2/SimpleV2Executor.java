@@ -9,7 +9,7 @@ import java.sql.*;
  * @author fujin
  * @version $Id: SimpleExecutor.java, v 0.1 2018-04-03 13:56 Exp $$
  */
-public class SimpleV2Executor implements MyExecutor {
+public class SimpleV2Executor implements MyV2Executor {
 
     public <E> E query(String sql, Object parameter){
         try {

@@ -3,6 +3,7 @@ package com.mybatis.v2;
 import com.mybatis.v1.BusinessLogMapperXml;
 import com.mybatis.v2.annotation.Insert;
 import com.mybatis.v2.annotation.Select;
+import com.mybatis.v2.session.MyV2SqlSession;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationHandler;

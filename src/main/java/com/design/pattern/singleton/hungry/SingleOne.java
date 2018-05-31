@@ -1,4 +1,4 @@
-package com.design.pattern.singleton;
+package com.design.pattern.singleton.hungry;
 
 /**
  * @author fujin

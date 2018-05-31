@@ -1,6 +1,8 @@
 package com.design.pattern.singleton;
 
 
+import com.design.pattern.singleton.lazy.SingleTwo;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;

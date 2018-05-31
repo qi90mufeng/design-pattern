@@ -1,7 +1,7 @@
-package com.mybatis.v2;
+package com.mybatis.v2.session;
 
-import com.mybatis.v1.MyConfiguration;
-import com.mybatis.v1.MyExecutor;
+import com.mybatis.v2.MyV2Configuration;
+import com.mybatis.v2.MyV2Executor;
 
 /**
  * @author fujin
@@ -9,13 +9,13 @@ import com.mybatis.v1.MyExecutor;
  */
 public class MyV2SqlSession {
 
-    private MyExecutor myExecutor;
+    private MyV2Executor myV2Executor;
 
     private MyV2Configuration myV2Configuration;
 
-    public MyV2SqlSession(MyExecutor myExecutor, MyV2Configuration myV2Configuration) {
+    public MyV2SqlSession(MyV2Executor myV2Executor, MyV2Configuration myV2Configuration) {
         this.myV2Configuration = myV2Configuration;
-        this.myExecutor = myV2Configuration.newExecutor(myExecutor);
+        this.myV2Executor = myV2Configuration.newExecutor(myV2Executor);
     }
 
     /**
@@ -36,10 +36,15 @@ public class MyV2SqlSession {
      * @return
      */
     public <T> T selectOne(String sql, Object parameter){
-        return myExecutor.query(sql, parameter);
+        return myV2Executor.query(sql, parameter);
     }
 
+    /**
+     *
+     * @param sql
+     * @return
+     */
     public int insert(String sql){
-        return myExecutor.insert(sql);
+        return myV2Executor.insert(sql);
     }
 }

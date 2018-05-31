@@ -1,7 +1,4 @@
-/**
- * sinafenqi.com
- * Copyright (c) 2018 All Rights Reserved.
- */
+
 package com.mybatis.v2.plugin;
 
 import com.mybatis.v1.MyExecutor;

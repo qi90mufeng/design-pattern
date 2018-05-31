@@ -3,6 +3,7 @@ package com.mybatis.v2;
 import com.mybatis.mapper.BusinessLogMapper;
 import com.mybatis.v2.plugin.InsertPlugin;
 import com.mybatis.v2.plugin.SelectPlugin;
+import com.mybatis.v2.session.MyV2SqlSession;
 
 /**
  * @author fujin
@@ -23,7 +24,7 @@ public class MybatisV2Test {
     }
 
     private static void select(){
-        MyV2SqlSession  myV2SqlSession = new MyV2SqlSession(new SimpleV2Executor(), new MyV2Configuration(new SelectPlugin()));
+        MyV2SqlSession myV2SqlSession = new MyV2SqlSession(new SimpleV2Executor(), new MyV2Configuration(new SelectPlugin()));
         BusinessLogMapper userMapper = myV2SqlSession.getMapper(BusinessLogMapper.class);
         System.out.println(userMapper.selectById(2));
     }
