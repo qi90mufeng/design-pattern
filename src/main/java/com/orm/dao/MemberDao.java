@@ -5,7 +5,7 @@ import com.orm.framework.BaseDaoSupport;
 import javax.annotation.Resource;
 import javax.sql.DataSource;
 
-@Repository
+//@Repository
 public class MemberDao extends BaseDaoSupport {
     @Override
     @Resource(name = "dataSource")

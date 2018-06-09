@@ -34,5 +34,6 @@ public class JdbcTest {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+        return null;
     }
 }
