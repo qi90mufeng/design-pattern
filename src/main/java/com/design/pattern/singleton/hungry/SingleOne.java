@@ -6,7 +6,7 @@ package com.design.pattern.singleton.hungry;
  */
 public class SingleOne {
 
-    private static SingleOne instance = new SingleOne();
+    private static final SingleOne instance = new SingleOne();
 
     public static SingleOne getInstance(){
         return instance;
