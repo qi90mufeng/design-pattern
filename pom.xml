@@ -21,6 +21,11 @@
             <version>4.3.7.RELEASE</version>
         </dependency>
         <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>4.3.7.RELEASE</version>
+        </dependency>
+        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>6.0.6</version>
@@ -114,6 +119,39 @@
             <artifactId>curator-recipes</artifactId>
             <version>4.0.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-hdfs</artifactId>
+            <version>2.7.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-common</artifactId>
+            <version>2.7.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-client</artifactId>
+            <version>2.7.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-core</artifactId>
+            <version>1.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>4.3.8.RELEASE</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -194,42 +232,42 @@
             <!--</plugin>-->
 
             <!-- 自定义插件-->
-            <plugin>
-                <groupId>com.mufeng</groupId>
-                <artifactId>design-plugin</artifactId>
-                <version>1.0-SNAPSHOT</version>
-                <configuration>
-                    <msg>This is My plugin</msg>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>introduce</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>com.wisetein</groupId>
-                <artifactId>maven-design-plugin</artifactId>
-                <version>1.0-SNAPSHOT</version>
+            <!--<plugin>-->
+                <!--<groupId>com.mufeng</groupId>-->
+                <!--<artifactId>design-plugin</artifactId>-->
+                <!--<version>1.0-SNAPSHOT</version>-->
                 <!--<configuration>-->
-                    <!--<includes>-->
-                        <!--<include>java</include>-->
-                        <!--<include>xml</include>-->
-                        <!--<include>properties</include>-->
-                    <!--</includes>-->
+                    <!--<msg>This is My plugin</msg>-->
                 <!--</configuration>-->
-                <executions>
-                    <execution>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>count</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<phase>package</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>introduce</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
+            <!--<plugin>-->
+                <!--<groupId>com.wisetein</groupId>-->
+                <!--<artifactId>maven-design-plugin</artifactId>-->
+                <!--<version>1.0-SNAPSHOT</version>-->
+                <!--&lt;!&ndash;<configuration>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<includes>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<include>java</include>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<include>xml</include>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<include>properties</include>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</includes>&ndash;&gt;-->
+                <!--&lt;!&ndash;</configuration>&ndash;&gt;-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<phase>compile</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>count</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
         </plugins>
     </build>
 
