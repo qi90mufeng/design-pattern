@@ -12,7 +12,7 @@ import java.util.List;
 @Slf4j
 public class StrategyChain {
     @Autowired
-    private List<RouteStrategy> strategies = new ArrayList<>();
+    private List<RouteStrategy> strategies;
 
     @PostConstruct
     public void init() {
