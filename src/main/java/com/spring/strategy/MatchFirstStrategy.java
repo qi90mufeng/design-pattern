@@ -1,4 +1,4 @@
-package com.spring;
+package com.spring.strategy;
 
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;

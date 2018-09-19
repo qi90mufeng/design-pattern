@@ -1,4 +1,4 @@
-package com.spring;
+package com.spring.strategy;
 
 /**
  * 资金选择策略
