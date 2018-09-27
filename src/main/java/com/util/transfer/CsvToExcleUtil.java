@@ -1,7 +1,3 @@
-/**
- * sinafenqi.com
- * Copyright (c) 2018 All Rights Reserved.
- */
 package com.util.transfer;
 
 import com.csvreader.CsvReader;

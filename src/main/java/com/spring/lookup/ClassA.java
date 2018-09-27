@@ -1,4 +1,8 @@
-package com.spi;
+package com.spring.lookup;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Lookup;
+import org.springframework.stereotype.Component;
 
 /**
  * ////////////////////////////////////////////////////////////////////
@@ -25,11 +29,20 @@ package com.spi;
  * ////////////////////////////////////////////////////////////////////
  *
  * @author fujin
- * @version $Id: JavaDeveloper.java, v 0.1 2018-08-29 Exp $$
+ * @version $Id: ClassA.java, v 0.1 2018-09-07 Exp $$
  */
-public class PythonDeveloper implements Developer {
-    @Override
-    public String getPrograme() {
-        return "Python";
+@Component
+public class ClassA {
+    @Autowired
+    private ClassB classB;
+
+    public void printClass() {
+        System.out.println("This is Class A: " + this);
+        classB.printClass();
+    }
+
+    @Lookup
+    public ClassB getClassB() {
+        return null;
     }
 }

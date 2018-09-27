@@ -1,8 +1,4 @@
-/**
- * sinafenqi.com
- * Copyright (c) 2018 All Rights Reserved.
- */
-package com.onlinenum;
+package com.algorithm.onlinenum;
 
 /**
  * ////////////////////////////////////////////////////////////////////
