@@ -1,4 +1,4 @@
-package com.design.pattern.decorator;
+package com.design.pattern.template;
 
 /**
  * ////////////////////////////////////////////////////////////////////
@@ -26,21 +26,16 @@ package com.design.pattern.decorator;
  *
  * @author fujin
  * @version v 0.1
- * @date 2018-12-04
+ * @date 2019-12-11
  */
-public class ConcreteDecorator1 extends Decorator2 {
-
-    public ConcreteDecorator1(Component component) {
-        super(component);
-    }
-
-    private void method1(){
-        System.out.println("method1 修饰");
-    }
-
-    @Override
-    public void operate() {
-        this.method1();
-        super.operate();
+public abstract class AbstractClass{
+    //基本方法
+    protected abstract void doAnything();
+    //基本方法
+    protected abstract void doSomething();
+    //模板方法
+    public final void templateMethod(){
+        this.doAnything();
+        this.doSomething();
     }
 }

@@ -8,9 +8,6 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-/**
- * Created by Tom on 2018/3/8.
- */
 public class SeriableTest {
     public static void main(String[] args) {
 

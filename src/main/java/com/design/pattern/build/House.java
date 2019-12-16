@@ -1,4 +1,4 @@
-package com.design.pattern.decorator;
+package com.design.pattern.build;
 
 /**
  * ////////////////////////////////////////////////////////////////////
@@ -26,21 +26,24 @@ package com.design.pattern.decorator;
  *
  * @author fujin
  * @version v 0.1
- * @date 2018-12-04
+ * @date 2019-12-12
  */
-public class ConcreteDecorator1 extends Decorator2 {
+public class House {
 
-    public ConcreteDecorator1(Component component) {
-        super(component);
+    int roomNum;
+
+    int doorNum;
+
+    public House(){
+        roomNum = 0;
+        doorNum = 0;
     }
 
-    private void method1(){
-        System.out.println("method1 修饰");
+    public int getRoomNum() {
+        return roomNum;
     }
 
-    @Override
-    public void operate() {
-        this.method1();
-        super.operate();
+    public int getDoorNum() {
+        return doorNum;
     }
 }
