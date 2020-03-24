@@ -1,4 +1,4 @@
-package com.java.classloader;
+package com.design.pattern.decorator.report;
 
 /**
  * ////////////////////////////////////////////////////////////////////
@@ -21,21 +21,22 @@ package com.java.classloader;
  * //      ========`-.____`-.___\_____/___.-`____.-'========         //
  * //                           `=---='                              //
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
- * //         佛祖保佑       永无BUG     永不修改                      //
+ * //         佛祖保佑       永无BUG     永不修改                    //
  * ////////////////////////////////////////////////////////////////////
  *
  * @author fujin
  * @version v 0.1
- * @date 2018-12-10
+ * @date 2020-01-09
  */
-public class LoaderTest {
-    public static void main(String[] args) throws InterruptedException {
-        System.out.println(Thread.currentThread().getContextClassLoader());
-        System.out.println(ClassLoader.getSystemClassLoader());
-
-//        Thread t1 = new Thread(new TeeRun());
-//
-//        t1.start();
-//        t1.join();
+public class SortScoreDecorator extends Decorator{
+    public SortScoreDecorator(SchoolReport sr) {
+        super(sr);
+    }
+    private void reportSort(){
+        System.out.println("我排名第38名...");
+    }
+    public void report(){
+        super.report();
+        this.reportSort();
     }
 }

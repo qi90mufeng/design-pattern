@@ -1,4 +1,4 @@
-package com.java.classloader;
+package com.design.pattern.decorator.report;
 
 /**
  * ////////////////////////////////////////////////////////////////////
@@ -21,21 +21,34 @@ package com.java.classloader;
  * //      ========`-.____`-.___\_____/___.-`____.-'========         //
  * //                           `=---='                              //
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
- * //         佛祖保佑       永无BUG     永不修改                      //
+ * //         佛祖保佑       永无BUG     永不修改                    //
  * ////////////////////////////////////////////////////////////////////
  *
  * @author fujin
  * @version v 0.1
- * @date 2018-12-10
+ * @date 2020-01-09
  */
-public class LoaderTest {
-    public static void main(String[] args) throws InterruptedException {
-        System.out.println(Thread.currentThread().getContextClassLoader());
-        System.out.println(ClassLoader.getSystemClassLoader());
+public class SugarFouthGradeSchoolReport extends FouthGradeSchoolReport{
+    private void reportHighScore(){
+        System.out.println("这次考试语文最高时75，数学是78，自然是80");
+    }
+    private void reportSort(){
+        System.out.println("我排名第38名...");
+    }
 
-//        Thread t1 = new Thread(new TeeRun());
-//
-//        t1.start();
-//        t1.join();
+    //成绩单要家长签字，这个是最要命的
+    public void sign(String name){
+        System.out.println("家长签名为：" + name);
+    }
+
+    //成绩单主要展示的是你的成绩情况
+    //通过继承确实能够解决这个问题，老爸看成绩单很开心，然后就给签字了，但现实的情况是很复杂的，
+    // 可能老爸听我汇报最高成绩后，就直接乐开花了，直接签名了，后面的排名就没必要看了，或者老爸要先看排名情况，那怎么办？
+    // 继续扩展？你能扩展多少个类？
+    // 这还是一个比较简单的场景，一旦需要装饰的条件非常多，比如20个，你还通过继承来解决，你想象的子类有多少个？你是不是马上就要崩溃了
+    public void report(){
+        this.reportHighScore();
+        super.report();
+        this.reportSort();
     }
 }

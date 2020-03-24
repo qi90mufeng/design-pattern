@@ -1,4 +1,4 @@
-package com.java.classloader;
+package com.jvm;
 
 /**
  * ////////////////////////////////////////////////////////////////////
@@ -21,21 +21,24 @@ package com.java.classloader;
  * //      ========`-.____`-.___\_____/___.-`____.-'========         //
  * //                           `=---='                              //
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
- * //         佛祖保佑       永无BUG     永不修改                      //
+ * //         佛祖保佑       永无BUG     永不修改                    //
  * ////////////////////////////////////////////////////////////////////
  *
  * @author fujin
  * @version v 0.1
- * @date 2018-12-10
+ * @date 2019-12-27
  */
-public class LoaderTest {
-    public static void main(String[] args) throws InterruptedException {
-        System.out.println(Thread.currentThread().getContextClassLoader());
-        System.out.println(ClassLoader.getSystemClassLoader());
+public class FibonacciTest {
 
-//        Thread t1 = new Thread(new TeeRun());
-//
-//        t1.start();
-//        t1.join();
+    public static void main(String[] args) {
+        long x = fibonacci(30);
+        System.out.println(x);
+    }
+
+    private static long fibonacci(long n){
+        if (n <= 1){
+            return n;
+        }
+        return fibonacci(n - 1) + fibonacci(n - 2);
     }
 }

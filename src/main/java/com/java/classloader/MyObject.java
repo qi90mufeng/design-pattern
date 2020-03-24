@@ -21,21 +21,29 @@ package com.java.classloader;
  * //      ========`-.____`-.___\_____/___.-`____.-'========         //
  * //                           `=---='                              //
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
- * //         佛祖保佑       永无BUG     永不修改                      //
+ * //         佛祖保佑       永无BUG     永不修改                    //
  * ////////////////////////////////////////////////////////////////////
  *
  * @author fujin
  * @version v 0.1
- * @date 2018-12-10
+ * @date 2019-12-25
  */
-public class LoaderTest {
-    public static void main(String[] args) throws InterruptedException {
-        System.out.println(Thread.currentThread().getContextClassLoader());
-        System.out.println(ClassLoader.getSystemClassLoader());
+public class MyObject {
 
-//        Thread t1 = new Thread(new TeeRun());
-//
-//        t1.start();
-//        t1.join();
+    public static int staticVar;
+    public int instanceVar;
+
+    public static void main(String[] args) {
+        int x = 32768;
+        MyObject myObj = new MyObject();
+        MyObject.staticVar = x;
+        x = MyObject.staticVar;
+        myObj.instanceVar = x;
+        x = myObj.instanceVar;
+        Object obj = myObj;
+        if (obj instanceof MyObject){
+            myObj = (MyObject) obj;
+            System.out.println(myObj.instanceVar);
+        }
     }
 }

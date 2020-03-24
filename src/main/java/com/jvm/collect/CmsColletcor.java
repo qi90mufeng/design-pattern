@@ -1,4 +1,4 @@
-package com.java.classloader;
+package com.jvm.collect;
 
 /**
  * ////////////////////////////////////////////////////////////////////
@@ -21,21 +21,27 @@ package com.java.classloader;
  * //      ========`-.____`-.___\_____/___.-`____.-'========         //
  * //                           `=---='                              //
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
- * //         佛祖保佑       永无BUG     永不修改                      //
+ * //         佛祖保佑       永无BUG     永不修改                    //
  * ////////////////////////////////////////////////////////////////////
  *
  * @author fujin
  * @version v 0.1
- * @date 2018-12-10
+ * @date 2019-12-17
  */
-public class LoaderTest {
-    public static void main(String[] args) throws InterruptedException {
-        System.out.println(Thread.currentThread().getContextClassLoader());
-        System.out.println(ClassLoader.getSystemClassLoader());
+public class CmsColletcor {
 
-//        Thread t1 = new Thread(new TeeRun());
-//
-//        t1.start();
-//        t1.join();
+    public static void main(String[] args) {
+        CmsColletcor cmsColletcor = new CmsColletcor();
+        cmsColletcor.f1();
+    }
+
+    public synchronized void f1(){
+        this.f2();
+    }
+
+    public void f2(){
+        synchronized (this){
+
+        }
     }
 }

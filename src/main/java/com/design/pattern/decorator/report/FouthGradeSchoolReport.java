@@ -1,4 +1,4 @@
-package com.java.classloader;
+package com.design.pattern.decorator.report;
 
 /**
  * ////////////////////////////////////////////////////////////////////
@@ -21,21 +21,24 @@ package com.java.classloader;
  * //      ========`-.____`-.___\_____/___.-`____.-'========         //
  * //                           `=---='                              //
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
- * //         佛祖保佑       永无BUG     永不修改                      //
+ * //         佛祖保佑       永无BUG     永不修改                    //
  * ////////////////////////////////////////////////////////////////////
  *
  * @author fujin
  * @version v 0.1
- * @date 2018-12-10
+ * @date 2020-01-09
  */
-public class LoaderTest {
-    public static void main(String[] args) throws InterruptedException {
-        System.out.println(Thread.currentThread().getContextClassLoader());
-        System.out.println(ClassLoader.getSystemClassLoader());
-
-//        Thread t1 = new Thread(new TeeRun());
-//
-//        t1.start();
-//        t1.join();
+public class FouthGradeSchoolReport extends SchoolReport{
+    //成绩单主要展示的是你的成绩情况
+    public void report(){
+        System.out.println("尊敬的XXX家长");
+        System.out.println("......");
+        System.out.println("语文62， 数学65， 题与98， 自然63");
+        System.out.println("......");
+        System.out.println("家长签名：");
+    }
+    //成绩单要家长签字，这个是最要命的
+    public void sign(String name){
+        System.out.println("家长签名为：" + name);
     }
 }

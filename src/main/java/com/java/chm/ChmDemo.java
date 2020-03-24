@@ -1,4 +1,5 @@
-package com.java.classloader;
+package com.java.chm;
+
 
 /**
  * ////////////////////////////////////////////////////////////////////
@@ -21,21 +22,22 @@ package com.java.classloader;
  * //      ========`-.____`-.___\_____/___.-`____.-'========         //
  * //                           `=---='                              //
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
- * //         佛祖保佑       永无BUG     永不修改                      //
+ * //         佛祖保佑       永无BUG     永不修改                    //
  * ////////////////////////////////////////////////////////////////////
  *
  * @author fujin
  * @version v 0.1
- * @date 2018-12-10
+ * @date 2020-02-08
  */
-public class LoaderTest {
-    public static void main(String[] args) throws InterruptedException {
-        System.out.println(Thread.currentThread().getContextClassLoader());
-        System.out.println(ClassLoader.getSystemClassLoader());
+public class ChmDemo {
 
-//        Thread t1 = new Thread(new TeeRun());
-//
-//        t1.start();
-//        t1.join();
+    public static void main(String[] args) {
+        System.out.println(resizeStamp(16)); //32795     0000 0000 0000 00001000 0000 0001 1011
+    }
+
+    //扩容戳
+    static final int resizeStamp(int n) {
+        int RESIZE_STAMP_BITS = 16;
+        return Integer.numberOfLeadingZeros(n) | (1 << (RESIZE_STAMP_BITS - 1));
     }
 }

@@ -1,4 +1,4 @@
-package com.java.classloader;
+package com.design.pattern.decorator.report;
 
 /**
  * ////////////////////////////////////////////////////////////////////
@@ -26,16 +26,13 @@ package com.java.classloader;
  *
  * @author fujin
  * @version v 0.1
- * @date 2018-12-10
+ * @date 2020-01-09
  */
-public class LoaderTest {
-    public static void main(String[] args) throws InterruptedException {
-        System.out.println(Thread.currentThread().getContextClassLoader());
-        System.out.println(ClassLoader.getSystemClassLoader());
+public class Father {
 
-//        Thread t1 = new Thread(new TeeRun());
-//
-//        t1.start();
-//        t1.join();
+    public static void main(String[] args) {
+        SchoolReport sr = new SortScoreDecorator(new HighScoreDecorator(new FouthGradeSchoolReport()));
+        sr.report();
+        sr.sign("2货季");
     }
 }

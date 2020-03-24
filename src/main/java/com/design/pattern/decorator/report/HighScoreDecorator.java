@@ -1,4 +1,4 @@
-package com.java.classloader;
+package com.design.pattern.decorator.report;
 
 /**
  * ////////////////////////////////////////////////////////////////////
@@ -21,21 +21,22 @@ package com.java.classloader;
  * //      ========`-.____`-.___\_____/___.-`____.-'========         //
  * //                           `=---='                              //
  * //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
- * //         佛祖保佑       永无BUG     永不修改                      //
+ * //         佛祖保佑       永无BUG     永不修改                    //
  * ////////////////////////////////////////////////////////////////////
  *
  * @author fujin
  * @version v 0.1
- * @date 2018-12-10
+ * @date 2020-01-09
  */
-public class LoaderTest {
-    public static void main(String[] args) throws InterruptedException {
-        System.out.println(Thread.currentThread().getContextClassLoader());
-        System.out.println(ClassLoader.getSystemClassLoader());
-
-//        Thread t1 = new Thread(new TeeRun());
-//
-//        t1.start();
-//        t1.join();
+public class HighScoreDecorator extends Decorator{
+    public HighScoreDecorator(SchoolReport sr) {
+        super(sr);
+    }
+    private void reportHighScore(){
+        System.out.println("这次考试语文最高时75，数学是78，自然是80");
+    }
+    public void report(){
+        this.reportHighScore();
+        super.report();
     }
 }
